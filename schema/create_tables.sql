@@ -64,3 +64,9 @@ CREATE TABLE IF NOT EXISTS notes (
     text TEXT CHECK (char_length(text) <= 255),
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TABLE IF NOT EXISTS source_rejection_reason_map (
+	source_id INTEGER REFERENCES sources,
+    rejection_reason_id SMALLINT REFERENCES rejection_reasons,
+    CONSTRAINT source_rejection_reason_pkey PRIMARY KEY (source_id, rejection_reason_id)
+);
