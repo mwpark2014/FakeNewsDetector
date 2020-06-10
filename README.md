@@ -1,1 +1,1 @@
-# FakeNewsDetector
+# SourceVerifier
